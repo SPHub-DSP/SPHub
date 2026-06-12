@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sertifikasi Pengelola Perbendaharaan | DSP</title>
     
+    <!-- Favicon DSP -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjMWUzYThhIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5EU1A8L3RleHQ+PC9zdmc+">
     
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -492,7 +494,7 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
         footer { background: #0f172a; color: var(--white); padding: 3rem 8%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
 
-        /* RESPONSIVITAS MOBILE UTUH - BARIS 274 s.d 326 */
+        /* RESPONSIVITAS TIMPA UTUH */
         @media (max-width: 992px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; }
             .cta-group { justify-content: center; flex-direction: column; width: 100%; max-width: 400px; margin: 0 auto; }
@@ -500,60 +502,69 @@
             .download-grid { grid-template-columns: 1fr; }
         }
 
+        /* PERBAIKAN FORCED RESPONSIVE DUA BARIS UNTUK SMARTPHONE */
         @media (max-width: 768px) {
-            /* Perbaikan Utama Kontainer Navigasi Mobile */
             nav {
-                top: 0; left: 0; width: 100%; border-radius: 0; padding: 1rem 0.5rem;
-                flex-direction: column; /* Membuat Logo dan Menu tersusun ke bawah */
-                justify-content: center; /* Memastikan semua elemen berada di tengah */
-                align-items: center;
-                gap: 0.8rem; 
-                background: rgba(15, 23, 42, 0.98); /* Gelap terpadu */
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                top: 0 !important; 
+                left: 0 !important; 
+                width: 100% !important; 
+                border-radius: 0 !important; 
+                padding: 0.8rem 0.5rem !important;
+                flex-direction: column !important; 
+                justify-content: center !important; 
+                align-items: center !important;
+                gap: 0.6rem !important; 
+                background: #0f172a !important; /* Memaksa warna gelap solid */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
             }
             
             .logo span { display: none !important; }
             .logo { 
-                font-size: 1.4rem; 
-                color: #ffffff; 
-                justify-content: center;
-                width: 100%;
+                font-size: 1.3rem !important; 
+                color: #ffffff !important; 
+                justify-content: center !important;
+                width: 100% !important;
             }
             
-            /* Penataan Menu Navigasi Menjadi Dua Baris Terpusat */
+            /* Memaksa pembagian menu 2 baris terpusat menggunakan !important */
             .nav-links { 
-                width: 100%; 
-                display: flex;
-                flex-wrap: wrap; /* Mengizinkan menu turun baris */
-                justify-content: center; /* Membuat menu rata tengah */
-                align-items: center;
-                gap: 0.5rem 0.4rem; /* Jarak antar tombol */
-                padding: 0;
+                width: 100% !important; 
+                display: flex !important;
+                flex-wrap: wrap !important; 
+                justify-content: center !important; 
+                align-items: center !important;
+                gap: 0.5rem 0.4rem !important; 
+                padding: 0 !important;
             }
             
             .nav-links li {
-                display: inline-block;
+                display: inline-block !important;
             }
             
             .nav-links a { 
-                padding: 0.5rem 0.8rem; 
-                font-size: 0.85rem; 
-                border-radius: 12px; 
-                display: block;
-                text-align: center;
-                white-space: nowrap; /* Mencegah teks menu patah kata */
+                padding: 0.4rem 0.7rem !important; 
+                font-size: 0.85rem !important; 
+                border-radius: 12px !important; 
+                display: block !important;
+                text-align: center !important;
+                white-space: nowrap !important;
+                color: #cbd5e1 !important;
+            }
+
+            .nav-links a.active {
+                color: #ffffff !important;
+                background: var(--gradient-accent) !important;
             }
             
-            /* Penyesuaian area judul agar tidak tertutup navbar mobile */
             .hero { 
-                padding-top: 12rem; 
+                padding-top: 11rem !important; 
             } 
-            .btn { width: 100%; }
-            .steps-container { padding-left: 1.8rem; }
-            .steps-container::before { left: 5px; }
-            .step-number { left: -1.8rem; width: 14px; height: 14px; }
-            .step-content h4 { font-size: 1.1rem; }
-            .toast-notification { right: 1rem; left: 1rem; bottom: 1rem; justify-content: center; }
+            .btn { width: 100% !important; }
+            .steps-container { padding-left: 1.8rem !important; }
+            .steps-container::before { left: 5px !important; }
+            .step-number { left: -1.8rem !important; width: 14px !important; height: 14px !important; }
+            .step-content h4 { font-size: 1.1rem !important; }
+            .toast-notification { right: 1rem !important; left: 1rem !important; bottom: 1rem !important; justify-content: center !important; }
         }
     </style>
 </head>
@@ -562,6 +573,7 @@
     <div class="bg-blob blob-1"></div>
     <div class="bg-blob blob-2"></div>
 
+    <!-- HEADER / NAVIGATION -->
     <nav>
         <a href="#beranda" class="logo">
             <i class="fa-solid fa-circle-nodes"></i> SPHub <span>Sertifikasi Perbendaharaan</span>
@@ -575,6 +587,7 @@
         </ul>
     </nav>
 
+    <!-- HERO SECTION -->
     <header id="beranda" class="hero">
         <div class="hero-container">
             <div class="hero-text reveal active">
@@ -588,6 +601,7 @@
         </div>
     </header>
 
+    <!-- SERTIFIKASI SECTION -->
     <section id="sertifikasi">
         <div class="section-header reveal">
             <h2>Kategori Standardisasi Kompetensi</h2>
@@ -595,6 +609,7 @@
         </div>
         
         <div class="card-market">
+            <!-- Card 1: PPK -->
             <div class="premium-card reveal">
                 <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
                 <h3>Pejabat Pembuat Komitmen</h3>
@@ -606,6 +621,7 @@
                 <button class="btn btn-secondary trigger-modal btn-detail-trigger" data-target="modal-ppk">Detail Informasi</button>
             </div>
 
+            <!-- Card 2: PPSPM -->
             <div class="premium-card card-orange reveal">
                 <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
                 <h3>Pejabat Penandatangan SPM</h3>
@@ -617,6 +633,7 @@
                 <button class="btn btn-secondary trigger-modal btn-detail-trigger" data-target="modal-ppspm">Detail Informasi</button>
             </div>
 
+            <!-- Card 3: Bendahara -->
             <div class="premium-card card-green reveal">
                 <div class="icon-box"><i class="fa-solid fa-coins"></i></div>
                 <h3>Bendahara Satuan Kerja</h3>
@@ -630,6 +647,7 @@
         </div>
     </section>
 
+    <!-- PANDUAN PENDAFTARAN SECTION -->
     <section id="panduan" class="registration-flow">
         <div class="section-header reveal">
             <h2>Alur Penerbitan Sertifikat & Pendaftaran</h2>
@@ -684,6 +702,7 @@
         </div>
     </section>
 
+    <!-- PUSAT UNDUHAN & MONITORING -->
     <section id="unduhan" style="background: rgba(248, 250, 252, 0.6);">
         <div class="section-header reveal">
             <h2>Pusat Unduhan & Berkas Digital</h2>
@@ -697,6 +716,7 @@
         </div>
 
         <div class="download-section-container reveal">
+            <!-- PANEL 1: PPK -->
             <div id="tab-ppk" class="tab-content-panel active">
                 <div class="download-grid">
                     <div class="download-vault">
@@ -723,6 +743,7 @@
                 </div>
             </div>
 
+            <!-- PANEL 2: PPSPM -->
             <div id="tab-ppspm" class="tab-content-panel">
                 <div class="download-grid">
                     <div class="download-vault">
@@ -749,6 +770,7 @@
                 </div>
             </div>
 
+            <!-- PANEL 3: BENDAHARA -->
             <div id="tab-bendahara" class="tab-content-panel">
                 <div class="download-grid">
                     <div class="download-vault">
@@ -777,6 +799,7 @@
         </div>
     </section>
 
+    <!-- FAQ & KONTAK SECTION -->
     <section id="faq">
         <div class="section-header reveal">
             <h2>Pertanyaan yang Sering Diajukan (FAQ)</h2>
@@ -784,6 +807,7 @@
         </div>
 
         <div class="accordion-holder reveal">
+            <!-- FAQ TIMELINE TRIWULAN III 2026 -->
             <div class="glass-accordion" style="border-left: 4px solid #3b82f6;">
                 <button class="acc-trigger" style="color: #1e3a8a;">Bagaimana jadwal dan tahapan perpanjangan masa berlaku Sertifikat Kompetensi untuk periode Triwulan III 2026? <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="acc-content">
@@ -842,6 +866,7 @@
                 </div>
             </div>
 
+            <!-- FAQ STANDAR LAINNYA -->
             <div class="glass-accordion">
                 <button class="acc-trigger">K/L saya sudah mendapatkan surat dispensasi dari DSP, namun satker saya belum terdaftar dispensasi di simaspaten? <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="acc-content">
@@ -898,13 +923,14 @@
         </div>
     </section>
 
+    <!-- DYNAMIC JENDELA MODAL POP-UP -->
     <div class="modal-overlay" id="modal-ppk">
         <div class="modal-box">
             <button class="modal-close">&times;</button>
             <h4><i class="fa-solid fa-user-tie"></i> Skema Penilaian Kompetensi PPK</h4>
             <p>Berdasarkan Peraturan Menteri Keuangan Nomor 211/PMK.05/2019, perolehan sertifikat kompetensi PPK dapat ditempuh melalui dua jenis penilaian strategis:</p>
             <ul class="modal-bullets">
-                <li><strong>Jalur Uji Kompetensi:</strong> Ditujukan untuk peserta yang telah mengikuti dan lulus Pelatihan PPK dari BPPK.</li>
+                <li><strong>Jalur Uji Kompetensi:</strong> Ditujukan untuk peserta yang telah mengikuti and lulus Pelatihan PPK dari BPPK.</li>
                 <li><strong>Jalur Konversi Pengakuan:</strong> Pemilik sertifikat profesi Pengadaan Barang/Jasa (PBJ) dapat langsung mengajukan pengakuan setelah menuntaskan Pelatihan Penyelesaian Tagihan di portal KLC.</li>
                 <li><strong>Masa Berlaku:</strong> Sertifikat Kompetensi berlaku selama 5 tahun dan berhak menyandang sebutan profesi PNT.</li>
             </ul>
@@ -937,15 +963,18 @@
         </div>
     </div>
 
+    <!-- ELEMEN NOTIFIKASI TOAST -->
     <div id="downloadToast" class="toast-notification">
         <i class="fa-solid fa-circle-check"></i>
         <span id="toastMessage">File berhasil didownload!</span>
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 SPHub - Direktorat Sistem Perbendaharaan. Seluruh Komponen Sistem Terproteksi.</p>
     </footer>
 
+    <!-- JAVASCRIPT FOR INTERACTIONS -->
     <script>
         // 1. SCROLL REVEAL FUNCTION
         function revealOnScroll() {
