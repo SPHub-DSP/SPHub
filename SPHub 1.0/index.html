@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sertifikasi Pengelola Perbendaharaan | DSP</title>
     
+    <!-- Favicon DSP -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjIwIiBmaWxsPSIjMWUzYThhIi8+PHRleHQgeD0iNTAiIHk9IjY1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5EU1A8L3RleHQ+PC9zdmc+">
     
+    <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -179,26 +181,6 @@
             gap: 1.2rem;
         }
 
-        .hero-visual {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 24px;
-            box-shadow: var(--shadow-premium);
-            border: 1px solid rgba(255,255,255,0.8);
-            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
-            transition: var(--transition);
-        }
-
-        .window-header {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .circle { width: 12px; height: 12px; border-radius: 50%; background: #ef4444; }
-        .circle-y { background: #f59e0b; }
-        .circle-g { background: #10b981; }
-
         /* BUTTONS */
         .btn {
             padding: 1rem 2.2rem;
@@ -255,11 +237,12 @@
             margin-bottom: 1rem;
         }
 
-        /* PREMIUM CARDS */
+        /* KARTU SERTIFIKASI */
         .card-market {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
+            align-items: stretch;
         }
 
         .premium-card {
@@ -271,6 +254,8 @@
             box-shadow: var(--shadow-premium);
             border: 1px solid #e2e8f0;
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
         .premium-card::before {
@@ -304,21 +289,32 @@
         .card-green .icon-box { background: var(--gradient-green); }
 
         .premium-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 1.2rem;
             color: #0f172a;
             line-height: 1.4;
-            min-height: 4rem; 
+            min-height: 2.5rem; 
             display: flex;
             align-items: center;
         }
 
-        .premium-card ul { list-style: none; margin-bottom: 2.5rem; }
+        .premium-card ul { 
+            list-style: none; 
+            margin-bottom: 2.5rem; 
+            flex-grow: 1;
+        }
+        
         .premium-card ul li { padding: 0.6rem 0 0.6rem 2rem; position: relative; color: var(--text-muted); font-weight: 500; }
         .premium-card ul li i { position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: #3b82f6; }
         .card-orange ul li i { color: #f59e0b; }
         .card-green ul li i { color: #10b981; }
+
+        .premium-card .btn-detail-trigger {
+            margin-top: auto; 
+            width: 100%; 
+            justify-content: center;
+        }
 
         /* PANDUAN PENDAFTARAN ALUR STEPS */
         .registration-flow {
@@ -427,21 +423,8 @@
             animation: fadeInTab 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        .tab-content-panel.active {
-            display: block;
-        }
-
-        @keyframes fadeInTab {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .download-grid { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 2rem; 
-        }
-
+        .tab-content-panel.active { display: block; }
+        .download-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
         .download-vault { background: var(--white); padding: 2.5rem; border-radius: 20px; display: flex; flex-direction: column; gap: 1.5rem; border: 1px solid #e2e8f0; box-shadow: var(--shadow-premium); transition: var(--transition); }
         .download-vault:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: var(--shadow-hover); }
         .vault-monitoring:hover { border-color: #f59e0b; }
@@ -449,7 +432,7 @@
         .vault-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(59, 130, 246, 0.1); color: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
         .vault-icon-orange { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
 
-        /* FAQ ACCORDION */
+        /* FAQ ACCORDION & TIMELINE TABLE STYLES */
         .accordion-holder { max-width: 850px; margin: 0 auto; }
         .glass-accordion { background: rgba(255, 255, 255, 0.7); border: 1px solid var(--glass-border); margin-bottom: 1.2rem; border-radius: 16px; backdrop-filter: blur(10px); overflow: hidden; transition: var(--transition); }
         .glass-accordion:hover { background: rgba(255, 255, 255, 0.9); }
@@ -461,6 +444,13 @@
         .wa-link { display: inline-flex; align-items: center; text-decoration: none; color: #1e293b; font-weight: 500; transition: var(--transition); padding: 0.3rem 0.6rem; border-radius: 8px; }
         .wa-link:hover { background: rgba(37, 211, 102, 0.1); color: #16a34a; }
         .wa-link i { color: #25d366; margin-right: 0.6rem; font-size: 1.2rem; }
+
+        /* Style Tabel Jadwal Perpanjangan di FAQ */
+        .faq-table-container { overflow-x: auto; margin: 1rem 0 1.5rem 0; border-radius: 8px; border: 1px solid #cbd5e1; }
+        .faq-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; background: var(--white); }
+        .faq-table th, .faq-table td { padding: 0.75rem 1rem; border: 1px solid #cbd5e1; }
+        .faq-table th { background: #f8fafc; color: #1e3a8a; font-weight: 700; }
+        .faq-table tr:nth-child(even) { background: #f1f5f9; }
 
         /* MODAL POP-UP STYLES */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
@@ -474,7 +464,7 @@
         .modal-bullets { padding-left: 1.2rem; margin-bottom: 1.5rem; color: var(--text-dark); font-weight: 500; }
         .modal-bullets li { margin-bottom: 0.5rem; }
 
-        /* BARU: CSS UNTUK NOTIFIKASI POP-UP (TOAST) */
+        /* TOAST NOTIFICATION STYLES */
         .toast-notification {
             position: fixed;
             bottom: 2rem;
@@ -496,42 +486,51 @@
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
             pointer-events: none;
         }
-        .toast-notification.show {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .toast-notification i {
-            color: #10b981;
-            font-size: 1.2rem;
-        }
+        .toast-notification.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
+        .toast-notification i { color: #10b981; font-size: 1.2rem; }
 
         /* REVEAL ANIMATION */
         .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         footer { background: #0f172a; color: var(--white); padding: 3rem 8%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
 
-        /* RESPONSIVITAS */
+        /* RESPONSIVITAS MOBILE UTUH - DUA BARIS TERPUSAT */
         @media (max-width: 992px) {
             .hero-container { grid-template-columns: 1fr; text-align: center; }
             .cta-group { justify-content: center; flex-direction: column; width: 100%; max-width: 400px; margin: 0 auto; }
-            .hero-visual { display: none; }
             .hero-text h1 { font-size: 2.2rem; }
             .download-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
             nav {
-                top: 0; left: 0; width: 100%; border-radius: 0; padding: 0.8rem 1rem;
-                flex-direction: column; gap: 0.6rem; background: rgba(255, 255, 255, 0.95);
+                top: 0; left: 0; width: 100%; border-radius: 0; padding: 1rem;
+                flex-direction: column; gap: 0.8rem; background: rgba(255, 255, 255, 0.98);
             }
             .logo span { display: none !important; }
-            .logo span::before { display: none !important; }
             .logo { font-size: 1.3rem; }
             
-            .nav-links { width: 100%; justify-content: space-between; gap: 0.2rem; }
-            .nav-links a { padding: 0.4rem 0.6rem; font-size: 0.8rem; border-radius: 12px; }
-            .hero { padding-top: 8rem; }
+            /* Pembagian Menu Menjadi 2 Baris Simetris */
+            .nav-links { 
+                width: 100%; 
+                display: flex;
+                flex-wrap: wrap; 
+                justify-content: center; 
+                gap: 0.4rem 0.6rem; 
+                padding: 0;
+            }
+            .nav-links li {
+                display: inline-block;
+            }
+            .nav-links a { 
+                padding: 0.5rem 0.8rem; 
+                font-size: 0.85rem; 
+                border-radius: 12px; 
+                display: block;
+                text-align: center;
+            }
+            
+            .hero { padding-top: 11rem; } 
             .btn { width: 100%; }
             .steps-container { padding-left: 1.8rem; }
             .steps-container::before { left: 5px; }
@@ -546,6 +545,7 @@
     <div class="bg-blob blob-1"></div>
     <div class="bg-blob blob-2"></div>
 
+    <!-- HEADER / NAVIGATION -->
     <nav>
         <a href="#beranda" class="logo">
             <i class="fa-solid fa-circle-nodes"></i> SPHub <span>Sertifikasi Perbendaharaan</span>
@@ -559,6 +559,7 @@
         </ul>
     </nav>
 
+    <!-- HERO SECTION -->
     <header id="beranda" class="hero">
         <div class="hero-container">
             <div class="hero-text reveal active">
@@ -569,17 +570,10 @@
                     <a href="#faq" class="btn btn-secondary">Tanya Jawab (FAQ)</a>
                 </div>
             </div>
-            <div class="hero-visual reveal active">
-                <div class="window-header">
-                    <div class="circle"></div>
-                    <div class="circle circle-y"></div>
-                    <div class="circle circle-g"></div>
-                </div>
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48L3N2Zz4=" alt="Portal Visual Mockup" style="background: var(--gradient-primary); width: 100%; height: 180px; border-radius: 12px;">
-            </div>
         </div>
     </header>
 
+    <!-- SERTIFIKASI SECTION -->
     <section id="sertifikasi">
         <div class="section-header reveal">
             <h2>Kategori Standardisasi Kompetensi</h2>
@@ -587,41 +581,45 @@
         </div>
         
         <div class="card-market">
+            <!-- Card 1: PPK -->
             <div class="premium-card reveal">
                 <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
-                <h3>Pejabat Pembuat Komitmen<br>(PPK - PNT)</h3>
+                <h3>Pejabat Pembuat Komitmen</h3>
                 <ul>
                     <li><i class="fa-solid fa-circle-check"></i> Dasar Hukum PMK No. 211/PMK.05/2019</li>
                     <li><i class="fa-solid fa-circle-check"></i> Persyaratan Dokumen Pendaftaran</li>
                     <li><i class="fa-solid fa-circle-check"></i> Alur Mekanisme Ujian / Jalur Konversi</li>
                 </ul>
-                <button class="btn btn-secondary trigger-modal" data-target="modal-ppk" style="width:100%; justify-content:center;">Detail Informasi</button>
+                <button class="btn btn-secondary trigger-modal btn-detail-trigger" data-target="modal-ppk">Detail Informasi</button>
             </div>
 
+            <!-- Card 2: PPSPM -->
             <div class="premium-card card-orange reveal">
                 <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
-                <h3>Pejabat Penandatangan SPM<br>(PPSPM - SNT)</h3>
+                <h3>Pejabat Penandatangan SPM</h3>
                 <ul>
                     <li><i class="fa-solid fa-circle-check"></i> Dasar Hukum PMK No. 211/PMK.05/2019</li>
                     <li><i class="fa-solid fa-circle-check"></i> Berkas Validasi Administratif</li>
                     <li><i class="fa-solid fa-circle-check"></i> Penilaian Kompetensi Teknis</li>
                 </ul>
-                <button class="btn btn-secondary trigger-modal" data-target="modal-ppspm" style="width:100%; justify-content:center;">Detail Informasi</button>
+                <button class="btn btn-secondary trigger-modal btn-detail-trigger" data-target="modal-ppspm">Detail Informasi</button>
             </div>
 
+            <!-- Card 3: Bendahara -->
             <div class="premium-card card-green reveal">
                 <div class="icon-box"><i class="fa-solid fa-coins"></i></div>
-                <h3>Bendahara Satuan Kerja<br>(BNT)</h3>
+                <h3>Bendahara Satuan Kerja</h3>
                 <ul>
                     <li><i class="fa-solid fa-circle-check"></i> Aturan Pokok Perpres No. 7 Tahun 2016</li>
                     <li><i class="fa-solid fa-circle-check"></i> Formulir Registrasi Administrasi</li>
                     <li><i class="fa-solid fa-circle-check"></i> Mekanisme Ujian Komprehensif CBT</li>
                 </ul>
-                <button class="btn btn-secondary trigger-modal" data-target="modal-bendahara" style="width:100%; justify-content:center;">Detail Informasi</button>
+                <button class="btn btn-secondary trigger-modal btn-detail-trigger" data-target="modal-bendahara">Detail Informasi</button>
             </div>
         </div>
     </section>
 
+    <!-- PANDUAN PENDAFTARAN SECTION -->
     <section id="panduan" class="registration-flow">
         <div class="section-header reveal">
             <h2>Alur Penerbitan Sertifikat & Pendaftaran</h2>
@@ -676,6 +674,7 @@
         </div>
     </section>
 
+    <!-- PUSAT UNDUHAN & MONITORING -->
     <section id="unduhan" style="background: rgba(248, 250, 252, 0.6);">
         <div class="section-header reveal">
             <h2>Pusat Unduhan & Berkas Digital</h2>
@@ -689,6 +688,7 @@
         </div>
 
         <div class="download-section-container reveal">
+            <!-- PANEL 1: PPK -->
             <div id="tab-ppk" class="tab-content-panel active">
                 <div class="download-grid">
                     <div class="download-vault">
@@ -715,6 +715,7 @@
                 </div>
             </div>
 
+            <!-- PANEL 2: PPSPM -->
             <div id="tab-ppspm" class="tab-content-panel">
                 <div class="download-grid">
                     <div class="download-vault">
@@ -741,6 +742,7 @@
                 </div>
             </div>
 
+            <!-- PANEL 3: BENDAHARA -->
             <div id="tab-bendahara" class="tab-content-panel">
                 <div class="download-grid">
                     <div class="download-vault">
@@ -769,6 +771,7 @@
         </div>
     </section>
 
+    <!-- FAQ & KONTAK SECTION -->
     <section id="faq">
         <div class="section-header reveal">
             <h2>Pertanyaan yang Sering Diajukan (FAQ)</h2>
@@ -776,10 +779,70 @@
         </div>
 
         <div class="accordion-holder reveal">
-            <div class="glass-accordion">
-                <button class="acc-trigger">K/L saya sudah mendapatkan surat dispensasi dari DSP, namun satker saya belum terdaftar dispensasi di aplikasi? <i class="fa-solid fa-chevron-down"></i></button>
+            <!-- FAQ TIMELINE TRIWULAN III 2026 -->
+            <div class="glass-accordion" style="border-left: 4px solid #3b82f6;">
+                <button class="acc-trigger" style="color: #1e3a8a;">Bagaimana jadwal dan tahapan perpanjangan masa berlaku Sertifikat Kompetensi untuk periode Triwulan III 2026? <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="acc-content">
-                    <p style="padding-bottom: 1.5rem;">Silakan merujuk pada dokumen pedoman administrasi atau <a href="#" style="color: #2563eb; font-weight: 700; text-decoration: underline;">file presentasi PPT teknis kebijakan dispensasi</a> yang berlaku untuk memeriksa mekanisme sinkronisasi data Satker Anda.</p>
+                    <p>Sesuai pengumuman resmi Direktorat Sistem Perbendaharaan, pelaksanaan perpanjangan masa berlaku sertifikat kompetensi (PPK, PPSPM, dan Bendahara) periode <strong>Triwulan III 2026</strong> dibagi menjadi 3 (tiga) tahapan berdasarkan tanggal penerbitan sertifikat awal:</p>
+                    <ul style="margin: 0.5rem 0 1rem 1.5rem; font-size: 0.95rem;">
+                        <li><strong>Tahap I:</strong> Untuk sertifikat yang terbit pada 1 s.d. 31 Juli 2021.</li>
+                        <li><strong>Tahap II:</strong> Untuk sertifikat yang terbit pada 1 s.d. 31 Agustus 2021.</li>
+                        <li><strong>Tahap III:</strong> Untuk sertifikat yang terbit pada 1 s.d. 30 September 2021.</li>
+                    </ul>
+                    <p><em>Catatan:</em> Pemegang sertifikat kompetensi yang diterbitkan setelah 30 September 2021 diperkenankan untuk dapat menyampaikan usulan perpanjangan.</p>
+                    
+                    <p style="margin-top: 1rem; font-weight: 700;">Detail Garis Waktu (Timeline) Pelaksanaan Keseluruhan:</p>
+                    <div class="faq-table-container">
+                        <table class="faq-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Tahapan Kegiatan</th>
+                                    <th>Tahap I</th>
+                                    <th>Tahap II</th>
+                                    <th>Tahap III</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Penyampaian usulan perpanjangan via <strong>SIMASPATEN</strong></td>
+                                    <td>Paling lambat 12 Juni 2026</td>
+                                    <td>Paling lambat 10 Juli 2026</td>
+                                    <td>Paling lambat 12 Agustus 2026</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Verifikasi oleh Direktorat Sistem Perbendaharaan (DSP)</td>
+                                    <td>Paling lambat 18 Juni 2026</td>
+                                    <td>Paling lambat 16 Juli 2026</td>
+                                    <td>Paling lambat 13 Agustus 2026</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Penyampaian hasil verifikasi perpanjangan sertifikat</td>
+                                    <td>19 Juni 2026</td>
+                                    <td>17 Juli 2026</td>
+                                    <td>14 Agustus 2026</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Pelaksanaan Uji Kompetensi (Jalur Ujian)</td>
+                                    <td>23 s.d. 26 Juni 2026</td>
+                                    <td>20 s.d. 24 Juli 2026</td>
+                                    <td>18 s.d. 21 Agustus 2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ STANDAR LAINNYA -->
+            <div class="glass-accordion">
+                <button class="acc-trigger">K/L saya sudah mendapatkan surat dispensasi dari DSP, namun satker saya belum terdaftar dispensasi di simaspaten? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-content">
+                    <p style="padding-bottom: 1.5rem;">Silakan merujuk pada dokumen pedoman administrasi atau file presentasi PPT teknis kebijakan dispensasi yang berlaku untuk memeriksa mekanisme sinkronisasi data Satker Anda.</p>
                 </div>
             </div>
 
@@ -791,9 +854,9 @@
             </div>
 
             <div class="glass-accordion">
-                <button class="acc-trigger">Usulan perpanjangan saya sudah berstatus "dikirim ke DSP", mengapa sampai sekarang belum diverifikasi? <i class="fa-solid fa-chevron-down"></i></button>
+                <button class="acc-trigger">Usulan perpanjangan saya sudah berstatus "dikirim ke DSP", mengapa sampai sekarang belum dilakukan verifikasi? <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="acc-content">
-                    <p style="padding-bottom: 1.5rem;">Proses verifikasi perpanjangan sertifikat dilakukan <strong>secara berkala per triwulan</strong> sejalan dengan <em>timeline</em> pengumuman resmi tiap periodenya. Sebagai contoh, apabila masa berlaku sertifikat Anda habis di triwulan IV, maka proses verifikasi berkasnya akan diproses dan dilakukan di triwulan III sesuai petunjuk pengumuman.</p>
+                    <p style="padding-bottom: 1.5rem;">Proses verifikasi perpanjangan sertifikat dilakukan <strong>secara berkala per triwulan</strong> sejalan dengan timeline pengumuman resmi tiap periodenya. Sebagai contoh, apabila masa berlaku sertifikat Anda habis di triwulan IV, maka proses verifikasi berkasnya akan diproses dan dilakukan di triwulan III sesuai petunjuk pengumuman.</p>
                 </div>
             </div>
 
@@ -807,7 +870,7 @@
             <div class="glass-accordion">
                 <button class="acc-trigger">Nomor HP salah sehingga informasi diklat tidak tersampaikan, apa yang harus kami lakukan? <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="acc-content">
-                    <p>Untuk pembaruan Nomor WhatsApp pelaksanaan diklat, Anda dapat langsung menghubungi PIC Pusdiklat AP (Layanan pesan <em>Chat WA Only</em>) sesuai rumpun jenis diklat berikut:</p>
+                    <p>Untuk pembaruan Nomor WhatsApp pelaksanaan diklat, Anda dapat langsung menghubungi PIC Pusdiklat AP (Layanan pesan Chat WA Only) sesuai rumpun jenis diklat berikut:</p>
                     <ul class="contact-list" style="padding-bottom: 1.5rem;">
                         <li><a href="https://wa.me/6289517579623" target="_blank" class="wa-link"><i class="fa-brands fa-whatsapp"></i> <strong>PJJ PPK:</strong> 0895-1757-9623</a></li>
                         <li><a href="https://wa.me/6281233307924" target="_blank" class="wa-link"><i class="fa-brands fa-whatsapp"></i> <strong>PJJ PPSPM:</strong> 0812-3330-7924</a></li>
@@ -819,7 +882,7 @@
             <div class="glass-accordion">
                 <button class="acc-trigger">Saya PPK yang sudah memiliki sertifikat PBJ, bisakah usulan saya dikonversi? <i class="fa-solid fa-chevron-down"></i></button>
                 <div class="acc-content">
-                    <p style="padding-bottom: 1.5rem;"><strong>Bisa</strong>. Pastikan sertifikat PBJ diunggah secara benar pada tab <em>"Diklat PBJ"</em>, serta dilengkapi dengan menyertakan Sertifikat PJJ PPK atau e-learning penyelesaian tagihan dari KLC yang diunggah ke dalam tab <em>"Diklat"</em>.</p>
+                    <p style="padding-bottom: 1.5rem;"><strong>Bisa</strong>. Pastikan sertifikat PBJ diunggah secara benar pada tab "Diklat PBJ", serta dilengkapi dengan menyertakan Sertifikat PJJ PPK atau e-learning penyelesaian tagihan dari KLC yang diunggah ke dalam tab "Diklat".</p>
                 </div>
             </div>
 
@@ -832,15 +895,16 @@
         </div>
     </section>
 
+    <!-- DYNAMIC JENDELA MODAL POP-UP -->
     <div class="modal-overlay" id="modal-ppk">
         <div class="modal-box">
             <button class="modal-close">&times;</button>
-            <h4><i class="fa-solid fa-user-tie"></i> Skema Penilaian Kompetensi PPK (PNT)</h4>
+            <h4><i class="fa-solid fa-user-tie"></i> Skema Penilaian Kompetensi PPK</h4>
             <p>Berdasarkan Peraturan Menteri Keuangan Nomor 211/PMK.05/2019, perolehan sertifikat kompetensi PPK dapat ditempuh melalui dua jenis penilaian strategis:</p>
             <ul class="modal-bullets">
                 <li><strong>Jalur Uji Kompetensi:</strong> Ditujukan untuk peserta yang telah mengikuti dan lulus Pelatihan PPK dari BPPK.</li>
                 <li><strong>Jalur Konversi Pengakuan:</strong> Pemilik sertifikat profesi Pengadaan Barang/Jasa (PBJ) dapat langsung mengajukan pengakuan setelah menuntaskan Pelatihan Penyelesaian Tagihan di portal KLC.</li>
-                <li><strong>Masa Berlaku:</strong> Sertifikat Kompetensi berlaku selama 5 tahun dan berhak menyandang sebutan profesi PNT.</li>
+                <li><strong>Masa Berlaku:</strong> Sertifikat Kompetensi berlaku selama 5 years dan berhak menyandang sebutan profesi PNT.</li>
             </ul>
         </div>
     </div>
@@ -848,7 +912,7 @@
     <div class="modal-overlay" id="modal-ppspm">
         <div class="modal-box">
             <button class="modal-close">&times;</button>
-            <h4><i class="fa-solid fa-file-signature"></i> Skema Penilaian Kompetensi PPSPM (SNT)</h4>
+            <h4><i class="fa-solid fa-file-signature"></i> Skema Penilaian Kompetensi PPSPM</h4>
             <p>Berdasarkan PMK Nomor 211/PMK.05/2019, Standardisasi Kompetensi Pejabat Penandatangan SPM ditata dengan ketentuan mutlak sebagai berikut:</p>
             <ul class="modal-bullets">
                 <li><strong>Mekanisme Penilaian tunggal:</strong> Penilaian kompetensi bagi PPSPM hanya dapat diperoleh melalui jalur kelulusan Uji Kompetensi PPSPM.</li>
@@ -861,7 +925,7 @@
     <div class="modal-overlay" id="modal-bendahara">
         <div class="modal-box">
             <button class="modal-close">&times;</button>
-            <h4><i class="fa-solid fa-coins"></i> Skema Sertifikasi Bendahara Satker (BNT)</h4>
+            <h4><i class="fa-solid fa-coins"></i> Skema Sertifikasi Bendahara Satker</h4>
             <p>Sesuai dengan amanat Peraturan Presiden Nomor 7 Tahun 2016, tata cara penilaian dan standardisasi bendahara diatur sebagai berikut:</p>
             <ul class="modal-bullets">
                 <li><strong>Ruang Lingkup Jabatan:</strong> Berlaku wajib bagi Bendahara Penerimaan, Bendahara Pengeluaran, serta Bendahara Pengeluaran Pembantu.</li>
@@ -871,15 +935,18 @@
         </div>
     </div>
 
+    <!-- ELEMEN NOTIFIKASI TOAST -->
     <div id="downloadToast" class="toast-notification">
         <i class="fa-solid fa-circle-check"></i>
         <span id="toastMessage">File berhasil didownload!</span>
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 SPHub - Direktorat Sistem Perbendaharaan. Seluruh Komponen Sistem Terproteksi.</p>
     </footer>
 
+    <!-- JAVASCRIPT FOR INTERACTIONS -->
     <script>
         // 1. SCROLL REVEAL FUNCTION
         function revealOnScroll() {
@@ -960,7 +1027,7 @@
             });
         });
 
-        // 6. BARU: JAVASCRIPT LOGIC UNTUK PEMICU NOTIFIKASI FILE DOWNLOAD
+        // 6. JAVASCRIPT LOGIC UNTUK PEMICU NOTIFIKASI FILE DOWNLOAD
         const downloadLinks = document.querySelectorAll(".btn-download-trigger");
         const toast = document.getElementById("downloadToast");
         const toastMessage = document.getElementById("toastMessage");
@@ -968,17 +1035,10 @@
 
         downloadLinks.forEach(link => {
             link.addEventListener("click", function() {
-                // Ambil kustom parameter nama file untuk dimasukkan ke teks notifikasi
                 const fileName = this.getAttribute("data-filename");
                 toastMessage.textContent = `Sukses! File ${fileName} telah didownload.`;
-                
-                // Munculkan pop-up toast notification
                 toast.classList.add("show");
-                
-                // Bersihkan timeout lama jika pengguna mengeklik berulang kali secara cepat
                 clearTimeout(toastTimeout);
-                
-                // Notifikasi otomatis tersembunyi kembali setelah 3 detik (3000 ms)
                 toastTimeout = setTimeout(() => {
                     toast.classList.remove("show");
                 }, 3000);
